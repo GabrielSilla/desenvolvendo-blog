@@ -1,0 +1,30 @@
+.content {
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 500px;
+}
+
+.posts-box {
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.posts-box .posts {
+    flex-flow: wrap;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cards {
+    margin: 30px;
+}

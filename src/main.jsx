@@ -10,6 +10,11 @@ import ErrorPage from "./routes/error";
 import Root from "./routes/root";
 import Contact from "./routes/contact";
 import Login from "./routes/Auth/login";
+import Home from "./routes/home/home";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const router = createBrowserRouter([
   {
@@ -17,13 +22,17 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "home/",
+        element: <Home/>
+      },
       {        
         path: "login/",
-        element: <Login />,
+        element: <Login />
       },
       {
         path: "contacts/:contactId",
-        element: <Contact />,
+        element: <Contact />
       },
     ],
   },
