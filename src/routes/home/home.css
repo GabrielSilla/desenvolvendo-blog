@@ -3,14 +3,14 @@
 }
 
 .logo {
+    background-color: black;
     width: 100%;
-    margin-left: 50px;
     display: flex;
-    justify-content: space-between;
+    padding-left: 50px;
 }
 
 .logo img {
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .posts-box {
@@ -20,12 +20,34 @@
     margin-bottom: 20px;
 }
 
-.posts-box .posts {
+.posts {
     flex-flow: wrap;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .cards {
     margin: 30px;
+    text-align: left;
+}
+
+.footer { width: 100%; vertical-align: middle; display: flex; align-items: center;}
+.footer .footer-text { width: 100%; text-align: end; margin: 20px;}
+.footer img { margin-left: 20px; max-width: 150px; }
+
+.footer-end { width: 100%; }
+.footer-end-y { 
+    width: 100%;
+    height: 11px;
+    background: #ffde59;
+}
+.footer-end-o { 
+    width: 100%;
+    height: 13px;
+    background: #ff914d;
+}
+.footer-end-r { 
+    width: 100%;
+    height: 15px;
+    background: #ff3131;
 }
