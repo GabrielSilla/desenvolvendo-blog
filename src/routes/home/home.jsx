@@ -10,7 +10,7 @@ export default function Home() {
         },
         {
             title: "TDD na Prática",
-            description: "Já usou o TDD? Não? Venha entender como ele funciona na prática, aplicando ao desenvolvimento e testes unitários",
+            description: "Já usou o TDD? Não? Venha entender como ele funciona na prática, aplicando ao desenvolvimento.",
             image: '/src/assets/posts-tests/TDD.png'
         },
         {
@@ -19,18 +19,18 @@ export default function Home() {
             image: '/src/assets/posts-tests/debug.png'
         },
         {
-            title: "Comunicando o Python com meu DB",
-            description: "Aprenda e entenda como funciona o Driver do SQL dentro do Python. Bora botar a mão na massa e fazer sair alguma coisa",
+            title: "Comunicando o Python com DB",
+            description: "Aprenda e entenda como funciona o Driver do SQL dentro do Python. Bora botar a mão na massa",
             image: '/src/assets/posts-tests/sql.png'
         },
         {
-            title: "Chega de código! Vamos aprender a fazer café",
+            title: "Vamos aprender um café?",
             description: "Eai, bateu o sono? Vamos ensinar uma receitinha pra você continuar codando com energia de sobra!",
             image: '/src/assets/posts-tests/mocha.jpg'
         },
         {
             title: "Meu primeiro APP em React",
-            description: "Vamos aprender um pouco de front-end agora. Vamos criar do zero um app usando o react e desmistificar o uso desse framework",
+            description: "Vamos aprender um pouco de front-end agora. Vamos criar do zero um app usando o react",
             image: '/src/assets/posts-tests/react.png'
         }
     ];
@@ -50,17 +50,17 @@ export default function Home() {
                 <div className="posts">
                     {posts.map((object, i) => 
                         <div key={i}>
-                            <Card className="cards" sx={{ maxWidth: 600 }}>
+                            <Card className="cards" sx={{ maxWidth: 400 }}>
                                 <CardActionArea>
                                     <CardMedia
                                     component="img"
-                                    height="300"
+                                    height="250"
                                     image={object.image}/>
                                     <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
                                         {object.title}
                                     </Typography>
-                                    <Typography variant="body1" color="text.secondary">
+                                    <Typography variant="body2" color="text.secondary">
                                         {object.description}
                                     </Typography>
                                     </CardContent>
