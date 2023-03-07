@@ -54,19 +54,18 @@ export default function Home() {
     return (
         <div className="content">
             <div className="logo">
-                <img src={"src/assets/img/logo-alt.png"} />
+                <img src={"src/assets/img/logo.png"} />
             </div>
             <Divider />
             <div className="posts-box">
                 <Typography style={{fontWeight: 100, marginBottom: '10px'}} variant="h5">
                     Últimas Postagens
                 </Typography>
-                <Divider/>
                 <div className="container">
                     <div className="posts">
                         {posts.map((object, i) => 
                             <div key={i}>
-                                <Card className="cards" sx={{ maxWidth: 500 }}>
+                                <Card className="cards" sx={{ maxWidth: 400 }}>
                                     <CardActionArea>
                                         <CardMedia
                                         component="img"
