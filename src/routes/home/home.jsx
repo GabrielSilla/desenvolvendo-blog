@@ -1,5 +1,7 @@
 ;import "./home.css";
-import { Divider, Typography, Card, CardContent, CardActionArea, CardMedia } from "@mui/material";
+import { Divider, Typography, Card, CardContent, CardActionArea, CardMedia, TextField, InputAdornment } from "@mui/material";
+import { Search } from "@mui/icons-material";
+
 
 export default function Home() {
     const windowWidth = window.innerWidth;
@@ -58,9 +60,24 @@ export default function Home() {
             </div>
             <Divider />
             <div className="posts-box">
-                <Typography style={{fontWeight: 100, marginBottom: '10px'}} variant="h5">
-                    Últimas Postagens
-                </Typography>
+                <div className="posts-header">
+                    <Typography style={{fontWeight: 100, marginBottom: '10px'}} variant="h5">
+                        Postagens Recentes
+                    </Typography>
+                    <TextField
+                        size="small"
+                        id="input-with-icon-textfield"
+                        label="Pesquisar"
+                        InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start">
+                                <Search />
+                            </InputAdornment>
+                        ),
+                        }}
+                        variant="filled"
+                    />
+                </div>
                 <div className="container">
                     <div className="posts">
                         {posts.map((object, i) => 
@@ -72,7 +89,7 @@ export default function Home() {
                                         height="250"
                                         image={object.image}/>
                                         <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
+                                        <Typography gutterBottom variant="h6" component="div">
                                             {object.title}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">

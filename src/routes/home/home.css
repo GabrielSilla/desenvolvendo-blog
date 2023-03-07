@@ -19,6 +19,12 @@
     margin-bottom: 20px;
 }
 
+.posts-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .posts {
     flex-flow: wrap;
     display: flex;
