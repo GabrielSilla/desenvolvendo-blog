@@ -1,9 +1,13 @@
 ;import "./home.css";
-import { Divider, Typography, Card, CardContent, CardActionArea, CardMedia, TextField, InputAdornment } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import { Divider, Typography, Card, CardContent, CardActionArea, CardMedia, Button, SwipeableDrawer } from "@mui/material";
+import { FilterAlt } from "@mui/icons-material";
+import { useState, Fragment } from "react";
+import React from "react";
 
 
 export default function Home() {
+    const [viewDrawer, setViewDrawer] = useState(false);
+
     const windowWidth = window.innerWidth;
     const posts = [
         {
@@ -64,19 +68,9 @@ export default function Home() {
                     <Typography style={{fontWeight: 100, marginBottom: '10px'}} variant="h5">
                         Postagens Recentes
                     </Typography>
-                    <TextField
-                        size="small"
-                        id="input-with-icon-textfield"
-                        label="Pesquisar"
-                        InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <Search />
-                            </InputAdornment>
-                        ),
-                        }}
-                        variant="filled"
-                    />
+                    <Button variant="outlined" endIcon={<FilterAlt />} onClick={() => {setViewDrawer(true)}}>
+                        Filtrar
+                    </Button>
                 </div>
                 <div className="container">
                     <div className="posts">
@@ -102,6 +96,15 @@ export default function Home() {
                         )}
                     </div>
                 </div>
+            </div>
+            <div>
+                <SwipeableDrawer
+                    anchor="right"
+                    open={viewDrawer}
+                    onClose={() => {setViewDrawer(false)}}
+                    onOpen={() => {setViewDrawer(true)}}
+                >
+                </SwipeableDrawer>
             </div>
         </div>
     );
