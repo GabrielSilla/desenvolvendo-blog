@@ -36,23 +36,26 @@
     text-align: left;
 }
 
-.footer { width: 100%; vertical-align: middle; display: flex; align-items: center;}
-.footer .footer-text { width: 100%; text-align: end; margin: 20px;}
-.footer img { margin-left: 20px; max-width: 150px; }
+.custom-chip {
+    position: absolute;
+    top:10px;
+    left: 10px;
+}
 
-.footer-end { width: 100%; }
-.footer-end-y { 
-    width: 100%;
-    height: 11px;
-    background: #ffde59;
+.custom-chip.back {
+    background-color: #fdd329;
+    border-color: #fdd329;
+    color: white;
 }
-.footer-end-o { 
-    width: 100%;
-    height: 13px;
-    background: #ff914d;
+
+.custom-chip.front {
+    background-color: #ff914d;
+    border-color: #ff914d;
+    color: white;
 }
-.footer-end-r { 
-    width: 100%;
-    height: 15px;
-    background: #ff3131;
+
+.custom-chip.others {
+    background-color: #ff3131;
+    border-color: #ff3131;
+    color: white;
 }
