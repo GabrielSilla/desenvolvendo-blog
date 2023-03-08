@@ -27,6 +27,6 @@ export default function Login() {
             </div>
             <Button style={{width: '100%', marginTop: 3}} type="submit" variant="outlined" onClick={tryLogin}>Entrar</Button>
         </div>
-    </Form>    
+    </Form>
   );
 }

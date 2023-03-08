@@ -35,3 +35,39 @@ body {
   justify-content: center;
   width: 100%;
 }
+
+#root {
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.footer-container {
+  position: static;
+  bottom: 0;
+  width: 100%;
+}
+.footer { width: 100%; vertical-align: middle; display: flex; align-items: center;}
+.footer .footer-text { width: 100%; text-align: end; margin: 20px;}
+.footer img { margin-left: 20px; max-width: 150px; }
+
+.footer-end { width: 100%; }
+.footer-end-y { 
+    width: 100%;
+    height: 11px;
+    background: #ffde59;
+}
+.footer-end-o { 
+    width: 100%;
+    height: 13px;
+    background: #ff914d;
+}
+.footer-end-r { 
+    width: 100%;
+    height: 15px;
+    background: #ff3131;
+}

@@ -103,23 +103,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Divider />
-            <div className="footer">
-                <img src={"src/assets/img/simple-logo.png"} />
-                <div className="footer-text">
-                    <Typography style={{fontWeight: 700}} variant="body1" color="text.primary">
-                        2023, Desenvolvido por Gabriel Silla & Karina Silla.
-                    </Typography>
-                    <Typography variant="body2" color="text.primary">
-                        Apoiando novas carreiras.
-                    </Typography>
-                </div>
-            </div>
-            <div className="footer-end">
-                <div className="footer-end-y"></div>
-                <div className="footer-end-o"></div>
-                <div className="footer-end-r"></div>
-            </div>
         </div>
     );
   }
