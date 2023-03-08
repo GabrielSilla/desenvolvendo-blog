@@ -4,6 +4,7 @@ import { FilterAlt } from "@mui/icons-material";
 import { useState, Fragment } from "react";
 import React from "react";
 import { chipTypes } from "../../models/chip-type";
+import PostsFilter from "../../components/posts-filter/posts-filter";
 
 
 export default function Home() {
@@ -97,6 +98,7 @@ export default function Home() {
                     onClose={() => {setViewDrawer(false)}}
                     onOpen={() => {setViewDrawer(true)}}
                 >
+                    <PostsFilter/>
                 </SwipeableDrawer>
             </div>
         </div>
