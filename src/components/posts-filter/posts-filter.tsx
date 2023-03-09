@@ -1,10 +1,26 @@
 import { Box, Button, MenuItem, Stack, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { chipTypes } from "../../models/chip-type";
 import './posts-filter.css';
 
-export default function PostsFilter() {
+export class FilterProps {
+    onBtnClick = (name: string, type: string): void => {};
+}
+
+export default function PostsFilter(props: FilterProps) {
     const chips = [chipTypes.back, chipTypes.front, chipTypes.others];
+
+    const [name, setName] = useState('');
+    const [type, setType] = useState('back');
+
+    const handleClick = () => {
+        props.onBtnClick(name, type);
+    }
+    
+    const handleClear = () => {
+        props.onBtnClick('', '');
+    }
+
     return (
         <div className="filter">
             <Box
@@ -20,13 +36,15 @@ export default function PostsFilter() {
                         id="outlined-required"
                         label="Nome do Artigo"
                         placeholder="Como criar gatos espaciais"
+                        onChange={(e) => {setName(e.target.value)}}
                     />
                     <TextField
                     id="outlined-select-type"
                     select
                     label="Tipo do Artigo"
-                    defaultValue="back"
+                    defaultValue={type}
                     helperText="Selecione o tipo do artigo"
+                    onChange={(e) => {setType(e.target.value)}}
                     >
                     {chips.map((option) => (
                         <MenuItem key={option.type} value={option.type}>
@@ -35,7 +53,8 @@ export default function PostsFilter() {
                     ))}
                     </TextField>
                     <Stack style={{margin: '10px'}} direction="row" spacing={2}>
-                        <Button variant="contained">Encontrar!</Button>
+                        <Button onClick={handleClick} variant="contained">Encontrar!</Button>
+                        <Button onClick={handleClear} variant="outlined">Limpar</Button>
                     </Stack>
                 </Stack>
             </Box>

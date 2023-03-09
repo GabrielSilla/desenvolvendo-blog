@@ -1,7 +1,7 @@
 ;import "./home.css";
 import { Divider, Typography, Card, CardContent, CardActionArea, CardMedia, Button, SwipeableDrawer, Chip } from "@mui/material";
 import { FilterAlt } from "@mui/icons-material";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import React from "react";
 import { chipTypes } from "../../models/chip-type";
 import PostsFilter from "../../components/posts-filter/posts-filter";
@@ -9,6 +9,12 @@ import PostsFilter from "../../components/posts-filter/posts-filter";
 
 export default function Home() {
     const [viewDrawer, setViewDrawer] = useState(false);
+    const [filteredPosts, setFilteredPosts]: any = useState([]);
+
+    const filter = (name: string, type: string) => {
+        let filtered = name || type ? posts.filter(p => p.title.indexOf(name.trim()) > -1 && p.type.type == type) : posts;
+        setFilteredPosts(filtered);
+    }
 
     const windowWidth = window.innerWidth;
     const posts = [
@@ -50,6 +56,10 @@ export default function Home() {
         }
     ];
 
+    useEffect(() => {
+        setFilteredPosts(posts)
+    }, []);
+
     return (
         <div className="content">
             <div className="logo">
@@ -67,7 +77,7 @@ export default function Home() {
                 </div>
                 <div className="container">
                     <div className="posts">
-                        {posts.map((object, i) => 
+                        {filteredPosts.map((object, i) => 
                             <div key={i}>
                                 <Card className="cards" sx={{ maxWidth: 400 }}>
                                     <CardActionArea>
@@ -98,7 +108,7 @@ export default function Home() {
                     onClose={() => {setViewDrawer(false)}}
                     onOpen={() => {setViewDrawer(true)}}
                 >
-                    <PostsFilter/>
+                    <PostsFilter onBtnClick={filter}/>
                 </SwipeableDrawer>
             </div>
         </div>

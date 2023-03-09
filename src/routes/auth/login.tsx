@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, Stack, TextField, Typography } from "@mui/material";
 import "./login.css";
 import { useState } from "react";
 import React from "react";
@@ -15,18 +15,20 @@ export default function Login() {
   return (
     <Form className="login-form">
         <div>
-            <Typography variant="h5" gutterBottom>
-                Àrea do {"</Admin>"}
+            <Typography variant="h5">
+                Àrea do {"<Admin/>"}
             </Typography>
-            <div>
-                <TextField style={{margin: 3}} label="Username" id="outlined-basic" type="text" margin="normal" variant="outlined"
-                    onChange={(value) => setUsername(value.target.value)}
-                />
-                <TextField style={{margin: 3}} label="Password" id="outlined-basic" type="password" margin="normal" variant="outlined"
-                    onChange={(value) => setPassword(value.target.value)}
-                />
-            </div>
-            <Button style={{width: '100%', marginTop: 3}} type="submit" variant="outlined" onClick={tryLogin}>Entrar</Button>
+            <Stack width='300px' direction="column" spacing={2}>
+              <Stack direction="column" spacing={1}>
+                  <TextField label="Usuário" id="outlined-basic" type="text" margin="normal" variant="outlined"
+                      onChange={(value) => setUsername(value.target.value)}
+                  />
+                  <TextField label="Senha" id="outlined-basic-2" type="password" margin="normal" variant="outlined"
+                      onChange={(value) => setPassword(value.target.value)}
+                  />
+              </Stack>
+              <Button style={{width: '100%'}} type="submit" variant="contained" onClick={tryLogin}>Entrar</Button>
+            </Stack>
         </div>
     </Form>
   );

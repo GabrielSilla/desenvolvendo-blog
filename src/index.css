@@ -71,3 +71,7 @@ body {
     height: 15px;
     background: #ff3131;
 }
+
+button {
+  text-transform: none !important;
+}
